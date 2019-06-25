@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="choi" type="button" onclick="choi()"> Chơi </button>
+    <script>
+        function choi() {
+            let kt=true;
+            while (kt){
+                alert("Hãy nhập khoảng số");
+                let a=parseInt(prompt("Nhập số bắt đầu: "));
+                let b=parseInt(prompt("Nhập số cuối cùng: "));
+                let c = parseInt(prompt("Nhập số dự đoán: "));
+                let x=Math.round(Math.random() * (b-a+1))+a;
+                if (x==c) {
+                    alert("Chúc mừng");
+                    document.getElementById("choi").innerText = "Chơi lại";
+                    kt=false;
+                } else if (c>x) {
+                    alert("Lớn hơn");
+                } else {
+                    alert("Bé thua");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
